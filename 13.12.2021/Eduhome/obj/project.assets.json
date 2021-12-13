@@ -7153,11 +7153,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\TUF DASH\\Desktop\\Task-Eduhome\\Eduhome\\Eduhome.csproj",
+      "projectUniqueName": "C:\\Users\\TUF DASH\\Desktop\\Task-Eduhome\\13.12.2021\\Eduhome\\Eduhome.csproj",
       "projectName": "Eduhome",
-      "projectPath": "C:\\Users\\TUF DASH\\Desktop\\Task-Eduhome\\Eduhome\\Eduhome.csproj",
+      "projectPath": "C:\\Users\\TUF DASH\\Desktop\\Task-Eduhome\\13.12.2021\\Eduhome\\Eduhome.csproj",
       "packagesPath": "C:\\Users\\TUF DASH\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\TUF DASH\\Desktop\\Task-Eduhome\\Eduhome\\obj\\",
+      "outputPath": "C:\\Users\\TUF DASH\\Desktop\\Task-Eduhome\\13.12.2021\\Eduhome\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\TUF DASH\\AppData\\Roaming\\NuGet\\NuGet.Config",
