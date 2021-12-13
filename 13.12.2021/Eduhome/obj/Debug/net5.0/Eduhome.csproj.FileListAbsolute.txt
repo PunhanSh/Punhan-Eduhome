@@ -331,4 +331,7 @@ C:\Users\TUF DASH\Desktop\Task-Eduhome\13.12.2021\Eduhome\obj\Debug\net5.0\Eduho
 C:\Users\TUF DASH\Desktop\Task-Eduhome\13.12.2021\Eduhome\obj\Debug\net5.0\Razor\Areas\Admin\Views\Shared\Error.cshtml.g.cs
 C:\Users\TUF DASH\Desktop\Task-Eduhome\13.12.2021\Eduhome\obj\Debug\net5.0\Razor\Areas\Admin\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\TUF DASH\Desktop\Task-Eduhome\13.12.2021\Eduhome\obj\Debug\net5.0\Razor\Areas\Admin\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
-C:\Users\TUF DASH\Desktop\Task-Eduhome\13.12.2021\Eduhome\obj\Debug\net5.0\Razor\Areas\Admin\Views\Home\Index.cshtml.g.cs
+C:\Users\TUF DASH\Desktop\Task-Eduhome\13.12.2021\Eduhome\obj\Debug\net5.0\Razor\Areas\Admin\Views\_ViewImports.cshtml.g.cs
+C:\Users\TUF DASH\Desktop\Task-Eduhome\13.12.2021\Eduhome\obj\Debug\net5.0\Razor\Areas\Admin\Views\_ViewStart.cshtml.g.cs
+C:\Users\TUF DASH\Desktop\Task-Eduhome\13.12.2021\Eduhome\obj\Debug\net5.0\Razor\Areas\Admin\Views\Social\Index.cshtml.g.cs
+C:\Users\TUF DASH\Desktop\Task-Eduhome\13.12.2021\Eduhome\obj\Debug\net5.0\Razor\Areas\Admin\Views\Social\Create.cshtml.g.cs

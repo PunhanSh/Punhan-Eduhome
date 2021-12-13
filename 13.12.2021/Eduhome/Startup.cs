@@ -58,7 +58,7 @@ namespace Eduhome
                 endpoints.MapAreaControllerRoute(
                     name:"Area",
                     areaName: "Admin",
-                    pattern: "{admin}/{controller=Home}/{action=Index}/{id?}"
+                    pattern: "{admin}/{controller=Social}/{action=Index}/{id?}"
                     );
             });
         }
