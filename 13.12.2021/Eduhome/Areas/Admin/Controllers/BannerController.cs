@@ -1,8 +1,10 @@
 ﻿using Eduhome.EduHomeDbContext;
 using Eduhome.Models;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -12,9 +14,12 @@ namespace Eduhome.Areas.Admin.Controllers
     public class BannerController : Controller
     {
         private readonly EduHomeDb _context;
-        public BannerController(EduHomeDb context)
+        private readonly IWebHostEnvironment _webHostEnvironment;
+
+        public BannerController(EduHomeDb context, IWebHostEnvironment webHostEnvironment)
         {
             _context = context;
+            _webHostEnvironment = webHostEnvironment;
         }
         public IActionResult Index()
         {
@@ -31,9 +36,31 @@ namespace Eduhome.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Banners.Add(model);
-                _context.SaveChanges();
-                return RedirectToAction("Index");
+                if (model.ImageFile.ContentType == "image/jpeg" || model.ImageFile.ContentType == "image/png")
+                {
+                    if (model.ImageFile.Length <= 2000000)
+                    {
+                        string fileName = Guid.NewGuid() + "-" + DateTime.Now.ToString("yyyyMMddHHmmss") + "-" + model.ImageFile.FileName;
+                        string filePath = Path.Combine(_webHostEnvironment.WebRootPath, "Uploads", fileName);
+                        using (var stream = new FileStream(filePath, FileMode.Create))
+                        {
+                            model.ImageFile.CopyTo(stream);
+                        }
+                        model.Image = fileName;
+                        _context.Banners.Add(model);
+                        _context.SaveChanges();
+                        return RedirectToAction("Index");
+                    }
+                    else
+                    {
+                        return View(model);
+
+                    }
+                }
+                else
+                {
+                    return View(model);
+                }
             }
 
             return View(model);
@@ -48,9 +75,31 @@ namespace Eduhome.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Banners.Update(model);
-                _context.SaveChanges();
-                return RedirectToAction("Index");
+                if (model.ImageFile.ContentType == "image/jpeg" || model.ImageFile.ContentType == "image/png")
+                {
+                    if (model.ImageFile.Length <= 2000000)
+                    {
+                        string fileName = Guid.NewGuid() + "-" + DateTime.Now.ToString("yyyyMMddHHmmss") + "-" + model.ImageFile.FileName;
+                        string filePath = Path.Combine(_webHostEnvironment.WebRootPath, "Uploads", fileName);
+                        using (var stream = new FileStream(filePath, FileMode.Create))
+                        {
+                            model.ImageFile.CopyTo(stream);
+                        }
+                        model.Image = fileName;
+                        _context.Banners.Update(model);
+                        _context.SaveChanges();
+                        return RedirectToAction("Index");
+                    }
+                    else
+                    {
+                        return View(model);
+
+                    }
+                }
+                else
+                {
+                    return View(model);
+                }
             }
 
             return View(model);
