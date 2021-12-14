@@ -1,6 +1,5 @@
 ﻿using Eduhome.EduHomeDbContext;
 using Eduhome.Models;
-using Eduhome.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -10,16 +9,16 @@ using System.Threading.Tasks;
 namespace Eduhome.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class SocialController : Controller
+    public class BannerController : Controller
     {
         private readonly EduHomeDb _context;
-        public SocialController(EduHomeDb context)
+        public BannerController(EduHomeDb context)
         {
             _context = context;
         }
         public IActionResult Index()
         {
-            List<Social> model = _context.Socials.ToList();
+            List<Banner> model = _context.Banners.ToList();
             return View(model);
         }
         public IActionResult Create()
@@ -28,28 +27,28 @@ namespace Eduhome.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(Social model)
+        public IActionResult Create(Banner model)
         {
             if (ModelState.IsValid)
             {
-                _context.Socials.Add(model);
+                _context.Banners.Add(model);
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
-            
+
             return View(model);
         }
         public IActionResult Update(int id)
         {
-            return View(_context.Socials.Find(id));
+            return View(_context.Banners.Find(id));
         }
 
         [HttpPost]
-        public IActionResult Update(Social model)
+        public IActionResult Update(Banner model)
         {
             if (ModelState.IsValid)
             {
-                _context.Socials.Update(model);
+                _context.Banners.Update(model);
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -58,8 +57,8 @@ namespace Eduhome.Areas.Admin.Controllers
         }
         public IActionResult Delete(int id)
         {
-            Social social = _context.Socials.Find(id);
-            _context.Socials.Remove(social);
+            Banner banner = _context.Banners.Find(id);
+            _context.Banners.Remove(banner);
             _context.SaveChanges();
             return RedirectToAction("Index");
         }

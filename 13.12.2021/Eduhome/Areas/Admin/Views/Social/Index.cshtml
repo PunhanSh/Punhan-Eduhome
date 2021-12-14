@@ -17,6 +17,7 @@
                         <th scope="col">Name</th>
                         <th scope="col">Icon</th>
                         <th scope="col">Link</th>
+                        <th scope="col">Link</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -24,12 +25,16 @@
                         foreach (var item in Model)
                         {
                             i++;
-                            <tr>
-                                <th scope="row">@i</th>
-                                <td>@item.Name</td>
-                                <td>@item.Icon</td>
-                                <td>@item.Link</td>
-                            </tr>
+                                        <tr>
+                                            <th scope="row">@i</th>
+                                            <td>@item.Name</td>
+                                            <td>@item.Icon</td>
+                                            <td>@item.Link</td>
+                                            <td>
+                                                <a class="btn btn-success" asp-area="Admin" asp-controller="Social" asp-action="Update" asp-route-id="@item.Id">Update</a>
+                                                <a class="btn btn-danger" asp-area="Admin" asp-controller="Social" asp-action="Delete" asp-route-id="@item.Id" onclick="return confirm('Are you sure?')">Delete</a>
+                                            </td>
+                                        </tr>
                             }
                         }
                 </tbody>

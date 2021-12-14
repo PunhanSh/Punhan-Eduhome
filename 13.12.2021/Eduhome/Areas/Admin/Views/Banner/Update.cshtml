@@ -1,0 +1,31 @@
+﻿@model Banner
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <form asp-area="Admin" asp-controller="Banner" asp-action="Update" method="post">
+                <div class="form-group">
+                    <label asp-for="@Model.Name">Name</label>
+                    <input class="form-control" asp-for="@Model.Name">
+                    <span asp-validation-for="@Model.Name" class="text-danger"></span>
+                </div>
+                @*<div class="form-group">
+                    <label asp-for="@Model.Link">Link</label>
+                    <input class="form-control" asp-for="@Model.Link">
+                    <span asp-validation-for="@Model.Link" class="text-danger"></span>
+                </div>*@
+                <input class="form-control" type="hidden" asp-for="@Model.Id">
+
+
+                <button type="submit" class="btn btn-primary">Update</button>
+                <button type="submit" class="btn btn-dark" asp-controller="Banner" asp-action="Index">Back to List</button>
+
+            </form>
+        </div>
+    </div>
+</div>
